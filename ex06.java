@@ -19,18 +19,21 @@ public class ex06 {
        int matchl = 0;
        for(int i = 0; i < longArray.length; i++) {
            if(longArray[i]==shortArray[0]) {
-                for(int j = 0; j <= shortArray.length; j++) {
-                    if( (i+j) < (i-longArray.length) ) {
+
+                boolean match = true;
+                int j = 0;
+                while(match && j <= shortArray.length) {
+                    System.out.println("DEBUG inner i:" + i + " j:" + j);
+                    if( (i+shortArray.length) < (longArray.length-j) ) {
                          if( shortArray[j] != longArray[i+j] ) {
-                             break;
-                         }else if(j == shortArray.length) {
+                             System.out.println("DEBUG no match!");
+                             match = false;
+                         }else if(j == shortArray.length && match) {
+                             System.out.println("DEBUG that's a match!");
                              matchCount++;
                          }
-                    }else {
-                        break;
                     }
-
-
+                    j++;
                 }  
            }
 
