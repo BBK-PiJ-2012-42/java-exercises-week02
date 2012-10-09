@@ -13,7 +13,7 @@ public class ex04 {
        
        
        //char[] letterText = inputText.toCharArray();
-       String[] splitText = inputText.split("/s");
+       String[] splitText = inputText.split(" ");
        for(int i = 0; i < splitText.length; i++) {
            System.out.println(splitText[i]);
                
@@ -21,7 +21,7 @@ public class ex04 {
        
        
        
-       System.out.println(splitText[0]);
+       
     }
     
      
