@@ -15,14 +15,29 @@ public class ex06 {
        char[] shortArray = shortText.toCharArray();
        char[] longArray = longText.toCharArray();
        
-       int eCount = 0;
-       for(int i = 0; i < longText.length; i++) {
-          if(letterText[i]=='e') {
-              eCount++;
-          } 
+       int matchCount = 0;
+       int matchl = 0;
+       for(int i = 0; i < longArray.length; i++) {
+           if(longArray[i]==shortArray[0]) {
+                for(int j = 0; j <= shortArray.length; j++) {
+                    if( (i+j) < (i-longArray.length) ) {
+                         if( shortArray[j] != longArray[i+j] ) {
+                             break;
+                         }else if(j == shortArray.length) {
+                             matchCount++;
+                         }
+                    }else {
+                        break;
+                    }
+
+
+                }  
+           }
+
        }
        
-       System.out.println("That's " + eCount + " times the letter e occurs in that text.");
+       System.out.println("That's " + matchCount +
+               " times the shorter text occurs in the longer text.");
     }
     
 }
